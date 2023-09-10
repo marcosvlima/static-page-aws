@@ -24,12 +24,15 @@ jobs:
         aws configure set region $AWS_DEFAULT_REGION
 
     - name: Inicializar o Terraform
+      working-directory: ./infra
       run: terraform init
 
     - name: Planejar a infraestrutura
+      working-directory: ./infra
       run: terraform plan
 
     - name: Aplicar a infraestrutura
+      working-directory: ./infra
       run: terraform apply -auto-approve
 
     # - name: Publicar status de implementação bem-sucedida
