@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hope is not a strategy on My Personal Log</title>
+    <link>/</link>
+    <description>Recent content in Hope is not a strategy on My Personal Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 08 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Who writes Hi there, I&amp;rsquo;m Marcos Vinicius de Moura Lima,
+I have a degree in Computer Science and over 10 years of experience in systems engineering. My skills encompass backend development and infrastructure. My main focus is fostering a culture of collaboration among teams and finding solutions to problems using DevOps/SRE tools and methodologies.
+I have experience in DevOps, platform engineering, SRE Cloud, and security, which gives me a comprehensive understanding of the software development lifecycle.</description>
+    </item>
+    
+  </channel>
+</rss>
