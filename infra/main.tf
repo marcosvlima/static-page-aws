@@ -11,31 +11,31 @@ resource "aws_s3_bucket" "static_website" {
   }
 }
 
-resource "aws_s3_bucket_policy" "static_website" {  
-  bucket = aws_s3_bucket.static_website.id   
-  policy = <<POLICY
-  {    
-    "Version": "2012-10-17",    
-    "Statement": [        
-      {            
-          "Sid": "PublicReadGetObject",            
-          "Effect": "Allow",            
-          "Principal": "*",            
-          "Action": [                
-             "s3:GetObject"            
-          ],            
-          "Resource": [
-             "arn:aws:s3:::${aws_s3_bucket.static_website.id}/*"            
-          ]        
-      }    
-    ]
- }
- POLICY
-}
+# resource "aws_s3_bucket_policy" "static_website" {  
+#   bucket = aws_s3_bucket.static_website.id   
+#   policy = <<POLICY
+#   {    
+#     "Version": "2012-10-17",    
+#     "Statement": [        
+#       {            
+#           "Sid": "PublicReadGetObject",            
+#           "Effect": "Allow",            
+#           "Principal": "*",            
+#           "Action": [                
+#              "s3:GetObject"            
+#           ],            
+#           "Resource": [
+#              "arn:aws:s3:::${aws_s3_bucket.static_website.id}/*"            
+#           ]        
+#       }    
+#     ]
+#  }
+#  POLICY
+# }
 
 resource "aws_cloudfront_distribution" "static_website_distribution" {
   origin {
-    domain_name = aws_s3_bucket.static_website.website_endpoint
+    # domain_name = aws_s3_bucket.static_website.website_endpoint
     origin_id   = "s3-origin"
   }
 
