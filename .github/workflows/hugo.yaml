@@ -71,8 +71,8 @@ jobs:
       with:
         projectBaseDir: ./app/public
         args: >
-        -Dsonar.organization=marcosvlima
-        -Dsonar.projectKey=marcosvlima_static-page-aws
+          -Dsonar.organization=marcosvlima
+          -Dsonar.projectKey=marcosvlima_static-page-aws
       env:
         GITHUB_TOKEN: ${{ secrets.TF_GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
