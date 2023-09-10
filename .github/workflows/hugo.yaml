@@ -79,10 +79,10 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.TF_GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
     - name: Upload artifact Sonar Artifact
-        uses: actions/upload-artifact@master
-        with:
-          name: sonar-coverage-report
-          path: coverage.xml
+      uses: actions/upload-artifact@master
+      with:
+        name: sonar-coverage-report
+        path: coverage.xml
 
 
   # Deployment job
