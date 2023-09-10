@@ -3,6 +3,8 @@ module "s3_bucket" {
   # Cloud Posse recommends pinning every module to a specific version
   # version = "x.x.x"
 
+  name = "app-marcosvlima-cloud01"
+
   attributes = ["failover-assets"]
 }
 
