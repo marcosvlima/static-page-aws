@@ -1,43 +1,43 @@
-name: Terraform AWS Workflow
+# name: Terraform AWS Workflow
 
-on:
-  push:
-    branches:
-      - main  # Substitua pelo nome da sua branch principal, se necessário
+# on:
+#   push:
+#     branches:
+#       - main  # Substitua pelo nome da sua branch principal, se necessário
 
-jobs:
-  terraform:
-    runs-on: ubuntu-latest
+# jobs:
+#   terraform:
+#     runs-on: ubuntu-latest
 
-    steps:
-    - name: Checkout do código
-      uses: actions/checkout@v2
+#     steps:
+#     - name: Checkout do código
+#       uses: actions/checkout@v2
 
-    - name: Configurar credenciais da AWS
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.SANDBOX_AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.SANDBOX_AWS_SECRET_ACCESS_KEY }}
-        AWS_DEFAULT_REGION: us-east-1  # Substitua pela região desejada
-      run: |
-        aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
-        aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
-        aws configure set region $AWS_DEFAULT_REGION
+#     - name: Configurar credenciais da AWS
+#       env:
+#         AWS_ACCESS_KEY_ID: ${{ secrets.SANDBOX_AWS_ACCESS_KEY_ID }}
+#         AWS_SECRET_ACCESS_KEY: ${{ secrets.SANDBOX_AWS_SECRET_ACCESS_KEY }}
+#         AWS_DEFAULT_REGION: us-east-1  # Substitua pela região desejada
+#       run: |
+#         aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+#         aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+#         aws configure set region $AWS_DEFAULT_REGION
 
-    - name: Inicializar o Terraform
-      working-directory: ./infra
-      run: terraform init
+#     - name: Inicializar o Terraform
+#       working-directory: ./infra
+#       run: terraform init
 
-    - name: Planejar a infraestrutura
-      working-directory: ./infra
-      run: terraform plan
+#     - name: Planejar a infraestrutura
+#       working-directory: ./infra
+#       run: terraform plan
 
-    - name: Aplicar a infraestrutura
-      working-directory: ./infra
-      run: terraform apply -auto-approve
+#     - name: Aplicar a infraestrutura
+#       working-directory: ./infra
+#       run: terraform apply -auto-approve
 
-    # - name: Publicar status de implementação bem-sucedida
-    #   run: |
-    #     curl -X POST \
-    #       -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-    #       -d '{"state": "success", "description": "Terraform apply succeeded", "context": "Terraform"}' \
-    #       "https://api.github.com/repos/${{ github.re
+#     # - name: Publicar status de implementação bem-sucedida
+#     #   run: |
+#     #     curl -X POST \
+#     #       -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+#     #       -d '{"state": "success", "description": "Terraform apply succeeded", "context": "Terraform"}' \
+#     #       "https://api.github.com/repos/${{ github.re
