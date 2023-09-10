@@ -54,14 +54,14 @@ pygmentsUseClasses = true
     name = "Blog"
     identifier = "blog"
     weight = 2
-    url = "/posts/"
+    url = "/posts/index.html"
   [[menu.main]]
     name = "About"
     identifier = "about"
     weight = 3
-    url = "/about/"
+    url = "/about/index.html"
   [[menu.main]]
     name = "Tags"
     identifier = "tags"
     weight = 4
-    url = "/tags/"
+    url = "/tags/index.html"
