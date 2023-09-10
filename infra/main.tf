@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "static_website" {
-  bucket = "Cloudfront-marcosvlimacloud01" # Substitua pelo nome do seu bucket
+  bucket = "cloudfront.marcosvlimacloud01" # Substitua pelo nome do seu bucket
 #   acl    = "public-read"
 
   website {
