@@ -11,9 +11,6 @@ module "cdn" {
   # Cloud Posse recommends pinning every module to a specific version
   # version = "x.x.x"
 
-  aliases           = ["assets.cloudposse.com"]
-  dns_alias_enabled = true
-  parent_zone_name  = "cloudposse.com"
   s3_origins = [{
     domain_name = module.s3_bucket.bucket_regional_domain_name
     origin_id   = module.s3_bucket.bucket_id
