@@ -12,7 +12,7 @@ resource "aws_s3_bucket" "static_website" {
 }
 
 resource "aws_s3_bucket_policy" "static_website" {  
-  bucket = aws_s3_bucket.prod_website.id   
+  bucket = aws_s3_bucket.static_website.id   
   policy = <<POLICY
   {    
     "Version": "2012-10-17",    
